@@ -31,7 +31,7 @@ class _SplashState extends State<Splash> {
           children: [
             Center(
               child: Image.network(
-                  'https://play-lh.googleusercontent.com/0t5UbiVl1yxi35_I7DJ1J4Rw-o0Ca2giDCGBbxvlp1dfDCF-c2_zDhLCZ797tZru9A'),
+                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsYj30WS76WtSEVzlY76AWvVdn6Yq2kC0CndjzyeAJ_14j-zIxREemvLshCOjfhI_hOLQ&usqp=CAU'),
             )
           ],
         ),

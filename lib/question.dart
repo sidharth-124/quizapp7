@@ -12,30 +12,62 @@ class _QuestionState extends State<Question> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-         backgroundColor: Colors.black,
+        backgroundColor: Colors.black,
         body: Center(
           child: Column(
             children: [
-              SizedBox(height: 200,),
+              SizedBox(
+                height: 200,
+              ),
               Container(child: Text('a')),
               SizedBox(
                 height: 400,
               ),
-              Container(padding: EdgeInsets.all(0),width: 400,height: 60,
+              Container(
+                padding: EdgeInsets.all(0),
+                width: 400,
+                height: 60,
                 child: TextButton(
                   onPressed: null,
-                  child: Text('Yes',style: TextStyle(color: Colors.black,fontSize: 20,),),
-                  style: TextButton.styleFrom(backgroundColor: Colors.lightGreen),
+                  child: Text(
+                    'Yes',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                    ),
+                  ),
+                  style:
+                      TextButton.styleFrom(backgroundColor: Colors.lightGreen),
                 ),
               ),
               SizedBox(
                 height: 10,
               ),
-              Container(padding: EdgeInsets.all(0),width: 400,height: 60,
+              Container(
+                padding: EdgeInsets.all(0),
+                width: 400,
+                height: 60,
                 child: TextButton(
                   onPressed: null,
-                  child: Text('No'),
+                  child: Text(
+                    'No',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                    ),
+                  ),
                   style: TextButton.styleFrom(backgroundColor: Colors.red),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(0),
+                width: 400,
+                height: 60,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.close_sharp,color: Colors.white,)
+                  ],
                 ),
               ),
             ],
