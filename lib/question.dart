@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sample5/qnlist.dart';
 
 class Question extends StatefulWidget {
   const Question({Key? key}) : super(key: key);
@@ -8,18 +9,41 @@ class Question extends StatefulWidget {
 }
 
 class _QuestionState extends State<Question> {
+  int i = 0;
+  void next() {
+    if (i < qns.length) {
+      i++;
+    }
+  }
+
+  List qns = [
+    Quiz(qus: 'Car have 4 wheels', ans: true),
+    Quiz(qus: 'An atom is the smallest particle.', ans: false),
+    Quiz(qus: 'Boiling water is 100 degrees Celsius.', ans: true),
+    Quiz(qus: 'Butterflies taste things with their wings.', ans: false),
+    Quiz(qus: 'The sun is not a star.', ans: false),
+    Quiz(qus: 'Lightning can’t strike in the same place twice.', ans: false),
+  ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.teal[900],
         body: Center(
           child: Column(
             children: [
               SizedBox(
                 height: 200,
               ),
-              Container(child: Text('a')),
+              Container(
+                child: Text(
+                  qns[i].qus,
+                  style: TextStyle(
+                    fontSize: 60,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
               SizedBox(
                 height: 400,
               ),
@@ -28,7 +52,11 @@ class _QuestionState extends State<Question> {
                 width: 400,
                 height: 60,
                 child: TextButton(
-                  onPressed: null,
+                  onPressed: () {
+                    setState(() {
+                      next();
+                    });
+                  },
                   child: Text(
                     'Yes',
                     style: TextStyle(
@@ -48,7 +76,11 @@ class _QuestionState extends State<Question> {
                 width: 400,
                 height: 60,
                 child: TextButton(
-                  onPressed: null,
+                  onPressed: () {
+                    setState(() {
+                      next();
+                    });
+                  },
                   child: Text(
                     'No',
                     style: TextStyle(
@@ -66,7 +98,10 @@ class _QuestionState extends State<Question> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.close_sharp,color: Colors.white,)
+                    Icon(
+                      Icons.close_sharp,
+                      color: Colors.white,
+                    )
                   ],
                 ),
               ),
