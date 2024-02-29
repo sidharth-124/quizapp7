@@ -10,6 +10,7 @@ class Question extends StatefulWidget {
 
 class _QuestionState extends State<Question> {
   int i = 0;
+  String result='';
   void next() {
     if (i < qns.length - 1) {
       i++;
@@ -26,7 +27,10 @@ class _QuestionState extends State<Question> {
   ];
   void check(bool ans) {
     if (qns[i].ans == ans) {
-      print('ans correct');
+      result='right';
+    }
+    else{
+      result='Wrong';
     }
   }
 
@@ -106,10 +110,11 @@ class _QuestionState extends State<Question> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(
-                      Icons.close_sharp,
-                      color: Colors.white,
-                    )
+                    Text(result)
+                    // Icon(
+                    //   Icons.close_sharp,
+                    //   color: Colors.white,
+                    // )
                   ],
                 ),
               ),
