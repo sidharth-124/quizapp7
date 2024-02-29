@@ -11,7 +11,7 @@ class Question extends StatefulWidget {
 class _QuestionState extends State<Question> {
   int i = 0;
   void next() {
-    if (i < qns.length) {
+    if (i < qns.length - 1) {
       i++;
     }
   }
@@ -24,6 +24,12 @@ class _QuestionState extends State<Question> {
     Quiz(qus: 'The sun is not a star.', ans: false),
     Quiz(qus: 'Lightning can’t strike in the same place twice.', ans: false),
   ];
+  void check(bool ans) {
+    if (qns[i].ans == ans) {
+      print('ans correct');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -54,6 +60,7 @@ class _QuestionState extends State<Question> {
                 child: TextButton(
                   onPressed: () {
                     setState(() {
+                      check(true);
                       next();
                     });
                   },
@@ -65,7 +72,7 @@ class _QuestionState extends State<Question> {
                     ),
                   ),
                   style:
-                      TextButton.styleFrom(backgroundColor: Colors.lightGreen),
+                  TextButton.styleFrom(backgroundColor: Colors.lightGreen),
                 ),
               ),
               SizedBox(
@@ -78,6 +85,7 @@ class _QuestionState extends State<Question> {
                 child: TextButton(
                   onPressed: () {
                     setState(() {
+                      check(false);
                       next();
                     });
                   },
